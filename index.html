@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Elements Demonstration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        form div {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>HTML5 Elements Demonstration</h1>
+    </header>
+
+    <!-- Ordered List with Roman Numerals -->
+    <section id="ordered-list">
+        <h2>Ordered List with Roman Numerals</h2>
+        <ol type="I">
+            <li>First item - Introduction to HTML5</li>
+            <li>Second item - Semantic Elements</li>
+            <li>Third item - Forms and Validation</li>
+            <li>Fourth item - Multimedia Elements</li>
+            <li>Fifth item - Accessibility Features</li>
+        </ol>
+    </section>
+
+    <!-- External Image from Pexels -->
+    <section id="external-image">
+        <h2>External Image from Pexels</h2>
+        <figure>
+            <img src="https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg" 
+                 alt="Beautiful landscape with trees and river" 
+                 width="600"
+                 style="max-width: 100%; height: auto;">
+            <figcaption>Nature landscape photo from Pexels.com</figcaption>
+        </figure>
+    </section>
+
+    <!-- Contacts Table -->
+    <section id="contacts-table">
+        <h2>Contacts Table</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Mobile</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>John Doe</td>
+                    <td>123 Main St, Anytown</td>
+                    <td>555-0101</td>
+                    <td>john.doe@example.com</td>
+                </tr>
+                <tr>
+                    <td>Jane Smith</td>
+                    <td>456 Oak Ave, Somewhere</td>
+                    <td>555-0102</td>
+                    <td>jane.smith@example.com</td>
+                </tr>
+                <tr>
+                    <td>Robert Johnson</td>
+                    <td>789 Pine Rd, Nowhere</td>
+                    <td>555-0103</td>
+                    <td>robert.j@example.com</td>
+                </tr>
+                <tr>
+                    <td>Emily Davis</td>
+                    <td>321 Elm Blvd, Anywhere</td>
+                    <td>555-0104</td>
+                    <td>emily.d@example.com</td>
+                </tr>
+                <tr>
+                    <td>Michael Wilson</td>
+                    <td>654 Maple Ln, Everywhere</td>
+                    <td>555-0105</td>
+                    <td>michael.w@example.com</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Registration Form -->
+    <section id="registration-form">
+        <h2>Registration Form</h2>
+        <form id="register" action="/submit" method="post" novalidate>
+            <!-- Name Field -->
+            <div>
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" 
+                       placeholder="Enter your full name" 
+                       required
+                       minlength="3"
+                       maxlength="50">
+                <small class="error">Please enter your full name (3-50 characters)</small>
+            </div>
+
+            <!-- Email Field -->
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" 
+                       placeholder="Enter your email address" 
+                       required>
+                <small class="error">Please enter a valid email address</small>
+            </div>
+
+            <!-- Password Field -->
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" 
+                       placeholder="Create a password" 
+                       required
+                       minlength="8"
+                       pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                       title="Must contain at least one number, one uppercase and lowercase letter, and at least 8 characters">
+                <small class="error">Password must be at least 8 characters with uppercase, lowercase, and a number</small>
+            </div>
+
+            <!-- Date of Birth -->
+            <div>
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" 
+                       required
+                       max="2020-01-01">
+                <small class="error">Please enter your date of birth</small>
+            </div>
+
+            <!-- Dropdown for Country -->
+            <div>
+                <label for="country">Country:</label>
+                <select id="country" name="country" required>
+                    <option value="" selected disabled>Select your country</option>
+                    <option value="US">United States</option>
+                    <option value="CA">Canada</option>
+                    <option value="UK">United Kingdom</option>
+                    <option value="AU">Australia</option>
+                    <option value="OTHER">Other</option>
+                </select>
+                <small class="error">Please select your country</small>
+            </div>
+
+            <!-- Radio Buttons for Gender -->
+            <div>
+                <label>Gender:</label>
+                <div>
+                    <input type="radio" id="male" name="gender" value="male" required>
+                    <label for="male" style="display: inline;">Male</label>
+                </div>
+                <div>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female" style="display: inline;">Female</label>
+                </div>
+                <div>
+                    <input type="radio" id="other" name="gender" value="other">
+                    <label for="other" style="display: inline;">Other</label>
+                </div>
+                <small class="error">Please select your gender</small>
+            </div>
+
+            <!-- Checkboxes for Interests -->
+            <div>
+                <label>Interests (Select all that apply):</label>
+                <div>
+                    <input type="checkbox" id="sports" name="interests" value="sports">
+                    <label for="sports" style="display: inline;">Sports</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="music" name="interests" value="music">
+                    <label for="music" style="display: inline;">Music</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="reading" name="interests" value="reading">
+                    <label for="reading" style="display: inline;">Reading</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="travel" name="interests" value="travel">
+                    <label for="travel" style="display: inline;">Travel</label>
+                </div>
+            </div>
+
+            <!-- Terms and Conditions -->
+            <div>
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms" style="display: inline;">I agree to the terms and conditions</label>
+                <small class="error">You must agree to the terms</small>
+            </div>
+
+            <!-- Submit Button -->
+            <div>
+                <button type="submit">Register</button>
+            </div>
+        </form>
+    </section>
+
+    <!-- Multimedia Elements -->
+    <section id="multimedia">
+        <h2>Multimedia Elements</h2>
+        
+        <!-- Audio Element -->
+        <div>
+            <h3>Audio Example</h3>
+            <audio controls>
+                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <p>Sample audio track from SoundHelix.com</p>
+        </div>
+        
+        <!-- Video Element -->
+        <div>
+            <h3>Video Example</h3>
+            <video width="600" controls style="max-width: 100%;">
+                <source src="https://samplelib.com/lib/preview/mp4/sample-5s.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <p>Sample video from SampleLib.com</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 HTML5 Demonstration. All rights reserved.</p>
+    </footer>
+</body>
+</html>
